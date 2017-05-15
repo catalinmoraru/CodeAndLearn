@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-init="participants=['Timo','Anna','Andrei','Radu','Razvan']">
+
+
+<h1>Participants: </h1>
+<p>
+    Filter Participants by name:
+    <input type="text" ng-model="participantName"/>
+</p>
+<ul>
+    <li ng-repeat="participant in participants | filter:participantName | orderBy:'-toString()' ">
+        {{participant | uppercase}}
+    </li>
+</ul>
+
+
+</body>
+</html>

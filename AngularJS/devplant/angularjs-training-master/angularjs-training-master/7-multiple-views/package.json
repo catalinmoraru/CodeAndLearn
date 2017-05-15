@@ -1,0 +1,18 @@
+{
+  "name": "7-material-design",
+  "version": "1.0.0",
+  "description": "DevPlant AngularJS Traning - Multiple Views",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  },
+  "devDependencies": {
+    "pushstate-server": "^3.0.0"
+  },
+  "scripts": {
+    "modern": "node node_modules/.bin/pushstate-server . 9200",
+    "win-modern": "pushstate-server . 9200"
+  },
+  "author": "Timo Bejan",
+  "license": "MIT"
+}

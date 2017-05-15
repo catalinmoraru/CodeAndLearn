@@ -1,0 +1,73 @@
+<!doctype html>
+<html ng-app="DevPlantApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="SearchController as vm">
+
+<h3>Click the button to fetch some data from our api</h3>
+<button ng-click="vm.getUsers()">Hit it!</button>
+
+<p ng-repeat="user in vm.users">
+    <strong>Name:</strong>{{user.name}}
+    <br>
+    <strong>Email:</strong>{{user.email}}
+<hr>
+</p>
+
+<script type="text/javascript">
+
+    angular.module('DevPlantApp', []).controller("SearchController", SearchController).factory("DataService", DataService);
+
+    function SearchController(DataService) {
+        const vm = this;
+        vm.users = [];
+        vm.getUsers = getUsers;
+
+        function getUsers() {
+            return DataService.getUsers().then(function (users) {
+
+                console.log("this context is different, so that's why we user vm: ",this == vm);
+
+                return vm.users = users;
+
+            }).then(function (data) {
+
+                console.log('Obtained following data:', data);
+
+            }).catch(function (error) {
+                showError(error);
+            })
+        }
+
+        function showError(error) {
+            alert('Failed to load data: ' + error);
+        }
+
+    }
+
+    function DataService($http, $log, $q) {
+
+        const apiUrl = "https://jsonplaceholder.typicode.com";
+
+        const service = {
+            getUsers: getUsers
+        };
+
+        function getUsers() {
+            return $http.get(apiUrl + "/users").then(function (response) {
+                return response.data;
+            }).catch(function getFailed(error) {
+                $log.error('XHR Failed for getUsers:' + JSON.stringify(error));
+                return $q.reject("Sorry!");
+            });
+        }
+
+        return service;
+    }
+
+
+</script>
+</body>
+</html>

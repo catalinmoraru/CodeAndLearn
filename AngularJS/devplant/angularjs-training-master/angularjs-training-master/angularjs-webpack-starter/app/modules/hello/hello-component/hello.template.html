@@ -1,0 +1,19 @@
+<md-content>
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            <h2>DevPlant</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content class="hello-viewport" layout-align="center center">
+        <h3>Welcome to the DevPlant AngularJS + Webpack Starter</h3>
+        <p>You can use this a starting point for your applications</p>
+
+        <md-button class="md-raised md-primary" ng-click="helloCtrl.sayHello()">Say Hello!</md-button>
+
+        <md-card class="md-padding" ng-if="helloCtrl.message">
+            <h3>{{helloCtrl.message}}</h3>
+        </md-card>
+    </md-content>
+
+</md-content>

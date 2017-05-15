@@ -1,0 +1,22 @@
+{
+  "name": "8-material-design",
+  "version": "1.0.0",
+  "description": "DevPlant AngularJS Traning - Deployments",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4",
+    "angular-route": "^1.6.4"
+  },
+  "devDependencies": {
+    "pushstate-server": "^3.0.0"
+  },
+  "scripts": {
+    "vanilla": "node node_modules/.bin/pushstate-server . 9203",
+    "win-vanilla": "pushstate-server . 9203"
+  },
+  "author": "Timo Bejan",
+  "license": "MIT"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "9-webpack",
+  "version": "1.0.0",
+  "description": "Devplant Webpack Demo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node node_modules/.bin/webpack-dev-server",
+    "prod": "node node_modules/.bin/webpack-dev-server -p --compress",
+    "build-prod": "node node_modules/.bin/webpack -p",
+    "win-dev": "webpack-dev-server",
+    "win-prod": "webpack-dev-server -p --compress",
+    "win-build-prod": "webpack -p",
+    "win-docker-build": "webpack -p && docker build -t devplant/webpack-basics -f docker/Dockerfile .",
+    "docker-build": "node node_modules/.bin/webpack -p && docker build -t devplant/webpack-demo-app -f docker/Dockerfile .",
+    "docker-stop": "docker rm $(docker stop $(docker ps -a -q --filter ancestor=devplant/webpack-demo-app))",
+    "docker-run": "docker run -p 80:80 -t devplant/webpack-demo-app",
+    "docker-clean": "docker kill $(docker ps -q) & docker rm $(docker ps -q)",
+    "docker-clean-win": "docker kill $(docker ps -q) ; docker rm $(docker ps -q)"
+  },
+  "author": "Timo Bejan - Devplant",
+  "license": "MIT",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.1",
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "ng-annotate": "^1.2.1",
+    "ng-annotate-loader": "^0.6.0",
+    "node-sass": "^4.5.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1",
+    "webpack-core": "^0.6.9",
+    "webpack-dev-server": "^2.4.5"
+  }
+}

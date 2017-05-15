@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="DevPlantApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div>
+    <h3>From Root Scope</h3>
+    {{name}}<br>{{message}}
+    <div ng-controller="MainController">
+        <h3>From main Controller</h3>
+        {{name}}<br>{{message}}
+        <div ng-controller="ChildController">
+            <h3>From child Controller</h3>
+            {{name}}<br>{{message}}
+        </div>
+    </div>
+</div>
+
+<h3> Confusing, isn't it ? </h3>
+
+<script type="text/javascript">
+
+    class ChildController {
+
+        constructor($scope) {
+            $scope.message = "My message is better than yours";
+        }
+    }
+
+    class MainController {
+
+        constructor($scope) {
+            $scope.name = "I'm Main, but i'll inherit a message from root";
+        }
+    }
+
+    angular.module('DevPlantApp', [])
+        .controller("MainController", MainController)
+        .controller("ChildController", ChildController)
+        .run(function ($rootScope) {
+
+            $rootScope.name = "Root Name";
+            $rootScope.message = "This is root speaking!";
+        });
+
+
+</script>
+
+</body>
+</html>

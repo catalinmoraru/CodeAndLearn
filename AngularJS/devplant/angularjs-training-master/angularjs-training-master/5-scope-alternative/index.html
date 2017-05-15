@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="DevPlantApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+
+<div ng-controller="MainController as main">
+    <h3>Main</h3>
+    {{main.name}} {{main.message}}
+    <div ng-controller="ChildController as child">
+        <h3>Child</h3>
+        {{child.name}} {{child.message}} <br>
+        <h4>Main Properties</h4>
+        {{main.name}} {{main.message}}
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    class ChildController {
+        constructor(){
+            this.name = "Child";
+            this.message = "This is child speaking";
+        }
+    }
+
+
+    class MainController {
+        constructor(){
+            this.name = "I am Main";
+            this.message = "This is the main message";
+        }
+    }
+
+    angular.module('DevPlantApp', []).controller("MainController", MainController).controller("ChildController", ChildController);
+
+
+</script>
+
+</body>
+</html>

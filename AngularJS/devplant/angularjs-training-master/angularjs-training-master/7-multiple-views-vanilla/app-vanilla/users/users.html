@@ -1,0 +1,12 @@
+<div>
+    <h3>Available Users:</h3>
+    <p ng-repeat="user in vm.users">
+        <strong>Name: </strong>{{user.name}}
+        <br>
+        <strong>Email: </strong>{{user.email}}
+        <br>
+        <a ng-href="/users/{{user.id}}/posts">Show Posts for this user</a>
+    <hr>
+    </p>
+</div>
+

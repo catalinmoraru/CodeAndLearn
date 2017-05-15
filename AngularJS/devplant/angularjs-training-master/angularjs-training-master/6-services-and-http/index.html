@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="DevPlantApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="SearchController as vm">
+
+<h3>Click the button to fetch some data from our api</h3>
+<button ng-click="vm.getUsers()">Hit it!</button>
+
+<p ng-repeat="user in vm.users">
+    <strong>Name:</strong>{{user.name}}
+    <br>
+    <strong>Email:</strong>{{user.email}}
+<hr>
+</p>
+
+<script type="text/javascript">
+
+    class SearchController {
+
+        constructor(DataService) {
+            this.users = [];
+            this.DataService = DataService;
+        }
+
+        getUsers() {
+            this.DataService.getUsers().then((users) => {
+                return this.users = users;
+            }).then((users) => {
+                console.log('Obtained following data:', users);
+            }).catch(function (error) {
+                alert('Failed to load data: ' + error);
+            })
+        }
+
+    }
+
+    class DataService {
+
+        constructor($http, $log, $q) {
+            this.$http = $http;
+            this.$log = $log;
+            this.$q = $q;
+            this.API_URL = "https://jsonplaceholder.typicode.com";
+        }
+
+        getUsers() {
+            return this.$http.get(this.API_URL + "/users").then((response) => {
+                return response.data;
+            }).catch((error) => {
+                this.$log.error('XHR Failed for getUsers:' + JSON.stringify(error));
+                return this.$q.reject("Sorry!");
+            });
+        }
+
+    }
+
+    angular.module('DevPlantApp', []).controller("SearchController", SearchController).factory("DataService", DataService);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<div>
+    <h3>Posts for User {{vm.user.name}}</h3>
+    <p ng-repeat="post in vm.posts">
+        <strong>Title: </strong>{{post.title}}
+        <br>
+        <strong>Body: </strong>{{post.body}}
+        <br>
+        <a ng-href="/users/{{vm.user.id}}/posts/{{post.id}}/comments">Show Comments</a>
+    <hr>
+    </p>
+    <a ng-href="/users">Back to Users</a>
+</div>

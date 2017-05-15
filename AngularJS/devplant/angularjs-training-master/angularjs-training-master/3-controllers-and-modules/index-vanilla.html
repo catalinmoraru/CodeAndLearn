@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="DevPlantApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="MainController">
+
+
+<h1>Participants: </h1>
+<p>
+    Filter Participants by name:
+    <input type="text" ng-model="participantName"/>
+</p>
+<ul>
+    <li ng-repeat="participant in participants | filter:participantName | orderBy:age ">
+        {{participant.name | lowercase}} - {{ 'age: ' + participant.age }}
+    </li>
+</ul>
+
+
+<script type="text/javascript">
+
+    function MainController($scope) {
+
+        this.$scope = $scope;
+        this.$scope.participantName = '';
+
+        this.$scope.participants = [{name: 'Timo', age: 28},
+            {name: 'Anna', age: 32},
+            {name: 'Andrei', age: 25},
+            {name: 'Radu', age: 35},
+            {name: 'Razvan', age: 22}];
+
+    }
+
+
+    angular.module('DevPlantApp', []).controller("MainController", MainController);
+
+</script>
+
+</body>
+</html>

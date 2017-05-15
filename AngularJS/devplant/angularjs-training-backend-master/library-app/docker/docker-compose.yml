@@ -1,0 +1,65 @@
+version: '2'
+services:
+
+  library-backend-1:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9010:9000
+
+  library-backend-2:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9020:9000
+
+  library-backend-2:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9030:9000
+
+  library-backend-3:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9030:9000
+
+  library-backend-4:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9040:9000
+
+  library-backend-5:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9050:9000
+
+  library-backend-6:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9060:9000
+
+  library-backend-7:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9070:9000
+
+  library-backend-8:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9080:9000
+
+  library-backend-10:
+    image: devplant/library-backend-angular-training
+    restart: always
+    ports:
+      - 9100:9000
+
+
+

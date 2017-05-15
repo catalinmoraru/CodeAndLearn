@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="PromisesApp">
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="TestController as test">
+
+<h3>Promises Samples</h3>
+<button ng-click="test.postAndUsers()"> Posts and users!</button>
+<br><br>
+
+<button ng-click="test.postAndUsersFailed()"> Posts and users Failed!</button>
+<br><br>
+
+<button ng-click="test.customOk()"> Custom OK!</button>
+<br><br>
+
+<button ng-click="test.customFail()"> Custom fail!</button>
+<br><br>
+
+<button ng-click="test.simpleValue()"> Simple Value </button>
+<br><br>
+
+<button ng-click="test.turnValueToPromise()"> Value to promise</button>
+<br><br>
+
+
+<script type="text/javascript" src="promises.service.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>

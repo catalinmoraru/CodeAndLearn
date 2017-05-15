@@ -1,0 +1,14 @@
+<md-content class="viewport">
+    <md-toolbar class="md-accent">
+        <h1>Users</h1>
+    </md-toolbar>
+
+    <md-button class="md-raised md-primary" ng-click="userCtrl.getUsers()">
+        Load Users!</md-button>
+
+    <md-card class="md-padding" ng-repeat="user in userCtrl.users">
+        <h3>Name: {{user.name}}</h3>
+        <h5>Email: {{user.email}}</h5>
+    </md-card>
+
+</md-content>
