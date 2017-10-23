@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="provider" class="com.apress.prospring4.ch2.HelloWorldMessageProvider"/>
+    <bean id="renderer" class="com.apress.prospring4.ch2.StandardOutMessageRenderer" p:messageProvider-ref="provider"/>
+
+</beans>-->
+
+
+
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="messageProvider"
+          class="com.apress.prospring4.ch3.xml.ConfigurableMessageProvider">
+        <constructor-arg value="Configurable message"/>
+    </bean>
+</beans>-->
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="messageProvider"
+          class="com.apress.prospring4.ch3.xml.ConfigurableMessageProvider"
+          c:message="This is a configurable message"/>
+
+    <bean id="constructorConfusion"
+          class="com.apress.prospring4.ch3.xml.ConstructorConfusion">
+        <constructor-arg>
+            <value>90</value>
+        </constructor-arg>
+    </bean>
+</beans>-->
+
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="injectSimple" class="com.apress.prospring4.ch3.xml.InjectSimple"
+      p:name="Chris Schaefer" p:age="32" p:height="1.778" p:programmer="true"
+      p:ageInSeconds="1009843200"/>
+</beans>-->
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="injectSimpleConfig" class="com.apress.prospring4.ch3.xml.InjectSimpleConfig"/>
+
+<bean id="injectSimpleSpel" class="com.apress.prospring4.ch3.xml.InjectSimpleSpel"
+      p:name="#{injectSimpleConfig.name}"
+      p:age="#{injectSimpleConfig.age + 1}"
+      p:height="#{injectSimpleConfig.height}"
+      p:programmer="#{injectSimpleConfig.programmer}"
+      p:ageInSeconds="#{injectSimpleConfig.ageInSeconds}"/>
+</beans>-->
+
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="oracle" name="wiseworm" class="com.apress.prospring4.ch3.BookwormOracle"/>
+
+    <bean id="injectRef" class="com.apress.prospring4.ch3.xml.InjectRef">
+        <property name="oracle">
+            <ref bean="oracle"/>
+        </property>
+    </bean>
+</beans>-->
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="injectBean" class="java.lang.String" c:_0="Bean In Parent"/>
+
+<bean id="injectBeanParent" class="java.lang.String" c:_0="Bean In Parent"/>
+</beans>-->
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="oracle" name="wiseworm" class="com.apress.prospring4.ch3.BookwormOracle"/>
+
+    <bean id="injectCollection" class="com.apress.prospring4.ch3.xml.CollectionInjection">
+        <property name="map">
+            <map>
+                <entry key="someValue">
+                    <value>Hello World!</value>
+                </entry>
+                <entry key="someBean">
+                    <ref bean="oracle"/>
+                </entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="firstName">Chris</prop>
+                <prop key="secondName">Schaefer</prop>
+            </props>
+        </property>
+        <property name="set">
+            <set>
+                <value>Hello World!</value>
+                <ref bean="oracle"/>
+            </set>
+        </property>
+        <property name="list">
+            <list>
+                <value>Hello World!</value>
+                <ref bean="oracle"/>
+            </list>
+        </property>
+    </bean>
+</beans>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+<context:annotation-config/>
+
+<context:component-scan
+        base-package="com.apress.prospring4.ch3.annotation"/>
+<util:map id="map" map-class="java.util.HashMap">
+    <entry key="someValue">
+        <value>Hello World!</value>
+    </entry>
+    <entry key="someBean">
+        <ref bean="oracle"/>
+    </entry>
+</util:map>
+
+
