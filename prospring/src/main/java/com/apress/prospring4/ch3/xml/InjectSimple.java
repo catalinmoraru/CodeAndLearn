@@ -14,7 +14,7 @@ public class InjectSimple {
         ctx.load("classpath:app-context-xml.xml");
         ctx.refresh();
 
-        InjectSimple simple = (InjectSimple)ctx.getBean("injectSimple");
+        InjectSimple simple = (InjectSimple) ctx.getBean("injectSimple");
 
         System.out.println(simple);
     }

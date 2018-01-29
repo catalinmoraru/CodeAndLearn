@@ -11,16 +11,16 @@ import java.util.Set;
 
 @Service("injectCollection")
 public class CollectionInjection {
-    @Resource(name="map")
+    @Resource(name = "map")
     private Map<String, Object> map;
 
-    @Resource(name="props")
+    @Resource(name = "props")
     private Properties props;
 
-    @Resource(name="set")
+    @Resource(name = "set")
     private Set set;
 
-    @Resource(name="list")
+    @Resource(name = "list")
     private List list;
 
     public static void main(String[] args) {
@@ -35,24 +35,24 @@ public class CollectionInjection {
     public void displayInfo() {
         System.out.println("Map contents:\n");
 
-        for (Map.Entry<String, Object> entry: map.entrySet()) {
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
             System.out.println("Key: " + entry.getKey() + " - Value: " + entry.getValue());
         }
 
         System.out.println("\nProperties contents:\n");
 
-        for (Map.Entry<Object, Object> entry: props.entrySet()) {
+        for (Map.Entry<Object, Object> entry : props.entrySet()) {
             System.out.println("Key: " + entry.getKey() + " - Value: " + entry.getValue());
         }
 
         System.out.println("\nSet contents:\n");
 
-        for (Object obj: set) {
+        for (Object obj : set) {
             System.out.println("Value: " + obj);
         }
         System.out.println("\nList contents:\n");
 
-        for (Object obj: list) {
+        for (Object obj : list) {
             System.out.println("Value: " + obj);
         }
     }

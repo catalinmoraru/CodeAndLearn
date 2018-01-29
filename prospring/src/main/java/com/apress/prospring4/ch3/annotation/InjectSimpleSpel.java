@@ -34,7 +34,7 @@ public class InjectSimpleSpel {
         ctx.load("classpath:app-context-annotation.xml");
         ctx.refresh();
 
-        InjectSimpleSpel simple = (InjectSimpleSpel)ctx.getBean("injectSimpleSpel");
+        InjectSimpleSpel simple = (InjectSimpleSpel) ctx.getBean("injectSimpleSpel");
         System.out.println(simple);
     }
 }

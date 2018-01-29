@@ -5,7 +5,6 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import com.apress.prospring4.ch3.BookwormOracle;
 
 
-
 public class InjectRef {
     private Oracle oracle;
 

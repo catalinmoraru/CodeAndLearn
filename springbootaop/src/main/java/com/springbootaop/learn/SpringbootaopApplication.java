@@ -9,16 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootaopApplication {
 
-	@Autowired
-	private ShapeService shapeService;
+    @Autowired
+    private ShapeService shapeService;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(SpringbootaopApplication.class, args);
+        SpringApplication.run(SpringbootaopApplication.class, args);
 
-		System.out.print("Hello Srping boot");
+        System.out.print("Hello Srping boot");
 
 
-
-	}
+    }
 }
