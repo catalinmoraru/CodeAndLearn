@@ -1,0 +1,121 @@
+
+sqlplus -s INO_DBADMIN/product1@PBDAILY2
+
+
+
+
+GRANT SELECT ON INO_CRM.BA_USERS TO INA_VSO_01 WITH GRANT OPTION;
+GRANT SELECT ON INO_CRM.BA_USERS_SUB TO INA_VSO_01 WITH GRANT OPTION; 
+GRANT SELECT ON INO_CRM.BA_USERS_TLI TO INA_VSO_01 WITH GRANT OPTION; 
+GRANT SELECT ON INO_CRM.BILLING_ACCOUNTS TO INA_VSO_01 WITH GRANT OPTION; 
+ 
+GRANT SELECT ON INO_CHANNEL_MGMT.CHANNELS TO INA_VSO_01 WITH GRANT OPTION; 
+GRANT SELECT ON INO_SECURITY.OPERATOR_GROUPS TO INA_VSO_01 WITH GRANT OPTION; 
+   
+GRANT CREATE TABLE TO INA_VSO_01; 
+GRANT UNLIMITED TABLESPACE TO INA_VSO_01; 
+GRANT DROP ANY TABLE TO INA_VSO_01;
+
+--GRANT CONNECT TO INA_VSO_01;
+--GRANT RESOURCE, DBA TO INA_VSO_01;
+
+drop table INA_VSO_01.APPLICATION_DEFAULT_ROLES cascade constraints; 
+drop table INA_VSO_01.CLIENT cascade constraints; 
+drop table INA_VSO_01.CLIENT_SESSION cascade constraints; 
+drop table INA_VSO_01.CLIENT_SESSION_ROLE cascade constraints; 
+drop table INA_VSO_01.COMPOSITE_ROLE cascade constraints; 
+drop table INA_VSO_01.CREDENTIAL cascade constraints; 
+drop table INA_VSO_01.DATABASECHANGELOG cascade constraints; 
+drop table INA_VSO_01.DATABASECHANGELOGLOCK cascade constraints; 
+drop table INA_VSO_01.EVENT_ENTITY cascade constraints; 
+drop table INA_VSO_01.FED_PROVIDERS cascade constraints; 
+drop table INA_VSO_01.KEYCLOAK_ROLE cascade constraints; 
+drop table INA_VSO_01.REALM cascade constraints; 
+drop table INA_VSO_01.REALM_APPLICATION cascade constraints; 
+drop table INA_VSO_01.REALM_ATTRIBUTE cascade constraints; 
+drop table INA_VSO_01.REALM_DEFAULT_ROLES cascade constraints; 
+drop table INA_VSO_01.REALM_EVENTS_LISTENERS cascade constraints; 
+drop table INA_VSO_01.REALM_REQUIRED_CREDENTIAL cascade constraints; 
+drop table INA_VSO_01.REALM_SMTP_CONFIG cascade constraints; 
+drop table INA_VSO_01.REALM_SOCIAL_CONFIG cascade constraints; 
+drop table INA_VSO_01.REDIRECT_URIS cascade constraints; 
+drop table INA_VSO_01.SCOPE_MAPPING cascade constraints; 
+drop table INA_VSO_01.USERNAME_LOGIN_FAILURE cascade constraints; 
+drop table INA_VSO_01.USER_ATTRIBUTE cascade constraints; 
+drop table INA_VSO_01.USER_ENTITY cascade constraints; 
+drop table INA_VSO_01.USER_FEDERATION_CONFIG cascade constraints; 
+drop table INA_VSO_01.USER_FEDERATION_PROVIDER cascade constraints; 
+drop table INA_VSO_01.USER_REQUIRED_ACTION cascade constraints; 
+drop table INA_VSO_01.USER_ROLE_MAPPING cascade constraints; 
+drop table INA_VSO_01.USER_SESSION cascade constraints; 
+drop table INA_VSO_01.USER_SOCIAL_LINK cascade constraints; 
+drop table INA_VSO_01.WEB_ORIGINS cascade constraints; 
+ 
+ 
+drop table INA_VSO_01.ADMIN_EVENT_ENTITY cascade constraints;
+drop table INA_VSO_01.ASSOCIATED_POLICY cascade constraints;
+drop table INA_VSO_01.AUTHENTICATION_EXECUTION cascade constraints;
+drop table INA_VSO_01.AUTHENTICATION_FLOW cascade constraints;
+drop table INA_VSO_01.AUTHENTICATOR_CONFIG cascade constraints;
+drop table INA_VSO_01.AUTHENTICATOR_CONFIG_ENTRY cascade constraints;
+drop table INA_VSO_01.BROKER_LINK cascade constraints;
+drop table INA_VSO_01.CLIENT_ATTRIBUTES cascade constraints;
+drop table INA_VSO_01.CLIENT_DEFAULT_ROLES cascade constraints;
+drop table INA_VSO_01.CLIENT_IDENTITY_PROV_MAPPING cascade constraints;
+drop table INA_VSO_01.CLIENT_INITIAL_ACCESS cascade constraints;
+drop table INA_VSO_01.CLIENT_NODE_REGISTRATIONS cascade constraints;
+drop table INA_VSO_01.CLIENT_SESSION_AUTH_STATUS cascade constraints;
+drop table INA_VSO_01.CLIENT_SESSION_NOTE cascade constraints;
+drop table INA_VSO_01.CLIENT_SESSION_PROT_MAPPER cascade constraints;
+drop table INA_VSO_01.CLIENT_TEMPLATE cascade constraints;
+drop table INA_VSO_01.CLIENT_TEMPLATE_ATTRIBUTES cascade constraints;
+drop table INA_VSO_01.CLIENT_USER_SESSION_NOTE cascade constraints;
+drop table INA_VSO_01.COMPONENT cascade constraints;
+drop table INA_VSO_01.COMPONENT_CONFIG cascade constraints;
+drop table INA_VSO_01.CREDENTIAL_ATTRIBUTE cascade constraints;
+drop table INA_VSO_01.FEDERATED_IDENTITY cascade constraints;
+drop table INA_VSO_01.FEDERATED_USER cascade constraints;
+drop table INA_VSO_01.FED_CREDENTIAL_ATTRIBUTE cascade constraints;
+drop table INA_VSO_01.FED_USER_ATTRIBUTE cascade constraints;
+drop table INA_VSO_01.FED_USER_CONSENT cascade constraints;
+drop table INA_VSO_01.FED_USER_CONSENT_PROT_MAPPER cascade constraints;
+drop table INA_VSO_01.FED_USER_CONSENT_ROLE cascade constraints;
+drop table INA_VSO_01.FED_USER_CREDENTIAL cascade constraints;
+drop table INA_VSO_01.FED_USER_GROUP_MEMBERSHIP cascade constraints;
+drop table INA_VSO_01.FED_USER_REQUIRED_ACTION cascade constraints;
+drop table INA_VSO_01.FED_USER_ROLE_MAPPING cascade constraints;
+drop table INA_VSO_01.GROUP_ATTRIBUTE cascade constraints;
+drop table INA_VSO_01.GROUP_ROLE_MAPPING cascade constraints;
+drop table INA_VSO_01.IDENTITY_PROVIDER cascade constraints;
+drop table INA_VSO_01.IDENTITY_PROVIDER_CONFIG cascade constraints;
+drop table INA_VSO_01.IDENTITY_PROVIDER_MAPPER cascade constraints;
+drop table INA_VSO_01.IDP_MAPPER_CONFIG cascade constraints;
+drop table INA_VSO_01.KEYCLOAK_GROUP cascade constraints;
+drop table INA_VSO_01.MIGRATION_MODEL cascade constraints;
+drop table INA_VSO_01.OFFLINE_CLIENT_SESSION cascade constraints;
+drop table INA_VSO_01.OFFLINE_USER_SESSION cascade constraints;
+drop table INA_VSO_01.POLICY_CONFIG cascade constraints;
+drop table INA_VSO_01.PROTOCOL_MAPPER cascade constraints;
+drop table INA_VSO_01.PROTOCOL_MAPPER_CONFIG cascade constraints;
+drop table INA_VSO_01.REALM_DEFAULT_GROUPS cascade constraints;
+drop table INA_VSO_01.REALM_ENABLED_EVENT_TYPES cascade constraints;
+drop table INA_VSO_01.REALM_SUPPORTED_LOCALES cascade constraints;
+drop table INA_VSO_01.REQUIRED_ACTION_CONFIG cascade constraints;
+drop table INA_VSO_01.REQUIRED_ACTION_PROVIDER cascade constraints;
+drop table INA_VSO_01.RESOURCE_POLICY cascade constraints;
+drop table INA_VSO_01.RESOURCE_SCOPE cascade constraints;
+drop table INA_VSO_01.RESOURCE_SERVER cascade constraints;
+drop table INA_VSO_01.RESOURCE_SERVER_POLICY cascade constraints;
+drop table INA_VSO_01.RESOURCE_SERVER_RESOURCE cascade constraints;
+drop table INA_VSO_01.RESOURCE_SERVER_SCOPE cascade constraints;
+drop table INA_VSO_01.SCOPE_POLICY cascade constraints;
+drop table INA_VSO_01.TEMPLATE_SCOPE_MAPPING cascade constraints;
+drop table INA_VSO_01.USER_CONSENT cascade constraints;
+drop table INA_VSO_01.USER_CONSENT_PROT_MAPPER cascade constraints;
+drop table INA_VSO_01.USER_CONSENT_ROLE cascade constraints;
+drop table INA_VSO_01.USER_FEDERATION_MAPPER cascade constraints;
+drop table INA_VSO_01.USER_FEDERATION_MAPPER_CONFIG cascade constraints;
+drop table INA_VSO_01.USER_GROUP_MEMBERSHIP cascade constraints;
+drop table INA_VSO_01.USER_SESSION_NOTE cascade constraints;
+ 
+Commit; 
